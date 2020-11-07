@@ -1,0 +1,9 @@
+{%  extends "layout.html" %}
+{% block content %}
+<h1>Results</h1>
+<p>Click <a href="{{ url_for('index')}}">here</a> to go back to the quizz</p>
+{% for question, answer in question_answers %}
+<p>{{ question.question_text }} You answered <b>{{ request.form[question.question_text] }}</b>. The correct answer is: <b>{{ answer[0] }}</b></p>
+{% endfor %}<br>
+<p>You have answered {{ correct }} correct questions and {{ incorrect }} incorrect questions.</p>
+{% endblock %}

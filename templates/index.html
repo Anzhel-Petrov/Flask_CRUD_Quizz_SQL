@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Quizz</h1>
+	<p>Yould you like to add a question? Click <a href="{{ url_for('question')}}">here</a> to add one!</p>
+	<p>Yould you like to remove a question? Click <a href="{{ url_for('delete')}}">here</a> to remove questions!</p>
+		{% for question in questions %}
+			<p>{{ question.question_text }}</p>
+		{% for answer in question.answers %}
+			<form action="" method="POST">
+			<input type="radio" id="male" name="{{ question.question_text }}" value="{{ answer.question_answer }}" required>
+			<label for="male">{{ answer.question_answer }}</label><br>
+		{% endfor %}
+		{% endfor %}
+			<br>
+			<input type="submit" value="Submit" name="submit_button">
+			</form>
+{% endblock %}

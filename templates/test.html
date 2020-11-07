@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% for question in questions %}
+			<p>{{ question.question_text }}</p>
+				{% for answer in question.answers %}
+				<form action="" method="POST">
+				<input type="radio" id="male" name="{{ question.question_text }}" value="{{ answer.question_answer }}" required>
+				<label for="male">{{ answer.question_answer }}</label><br>
+				{% endfor %}
+		{% endfor %}
+</body>
+</html>

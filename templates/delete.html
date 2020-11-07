@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Quizz</h1>
+    <p>Click <a href="{{ url_for('index')}}">here</a> to go back to the quizz</p>
+    <p>Please choose a question that you want to delete</p>
+		{% for question in questions %}
+			<p>{{ question.question_text }}</p> <a href="/delete/{{ question.question_id }}">Delete</a>
+		{% endfor %}
+
+{% endblock %}

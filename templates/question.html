@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content%}
+    <h1>Add a Question</h1>
+    <p>Click <a href="{{ url_for('index')}}">here</a> to go back to the quizz</p>
+    	<div class="form">
+    		<p>Please add a question and three answers.</p>
+		<form action="" method="POST">
+			<label for="question">Your question:</label>
+			<input type="text" name="question" id="question"><br>
+			<label for="answer_1">Enter answer that is incorrect:</label>
+			<input type="text" name="answer_1" id="answer_1"><br>
+			<label for="answer_2">Enter answer that is incorrect:</label>
+			<input type="text" name="answer_2" id="answer_2"><br>
+			<label for="answer_3">Enter answer that is incorrect:</label>
+			<input type="text" name="answer_3" id="answer_3"><br>
+			<label for="answer_true">Enter answer that is correct:</label>
+			<input type="text" name="answer_true" id="answer_true"><br>
+			<input type="submit" value="Submit" name="add_question_button">
+		</form>
+{% endblock %}
+</div>
